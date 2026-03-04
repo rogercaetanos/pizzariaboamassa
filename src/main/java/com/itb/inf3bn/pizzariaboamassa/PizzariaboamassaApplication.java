@@ -10,11 +10,6 @@ public class PizzariaboamassaApplication {
 
         SpringApplication.run(PizzariaboamassaApplication.class, args);
 
-        // Pedi que todos criassem o trabalho tcc
-        // e todos terminaram!
-        // Pedi para verificar a conta do git hub
-        // Faltou enviar para o git hub
-
 	}
 
 }
