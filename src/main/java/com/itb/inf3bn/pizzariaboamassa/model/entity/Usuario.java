@@ -2,6 +2,9 @@ package com.itb.inf3bn.pizzariaboamassa.model.entity;
 
 import com.itb.inf3bn.pizzariaboamassa.model.enums.TipoUsuario;
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
@@ -9,10 +12,14 @@ import java.time.LocalDate;
 @Table(name = "Usuario")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo_usuario",  discriminatorType = DiscriminatorType.STRING)
+@Setter    // Atribuir valor ao atributo
+@Getter    // Recuperar valor do atributo
+@EqualsAndHashCode(onlyExplicitlyIncluded = true) // Evita duplicidade em coleções e otimiza a busca
 public class Usuario {
 
     @Id                     // PK
     @GeneratedValue(strategy = GenerationType.IDENTITY) // PK será gerado automaticamente, identificado de 1 em 1
+    @EqualsAndHashCode.Include
     private Long id;
     private String nome;
     private String cpf;
@@ -30,5 +37,6 @@ public class Usuario {
     @Enumerated(EnumType.STRING)  // Transformando o enum para String
     @Column(name = "tipo_usuario", insertable = false, updatable = false)
     private TipoUsuario tipoUsuario;
+
 
 }
