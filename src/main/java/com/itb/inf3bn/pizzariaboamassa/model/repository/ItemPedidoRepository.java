@@ -1,11 +1,11 @@
 package com.itb.inf3bn.pizzariaboamassa.model.repository;
 
-import com.itb.inf3bn.pizzariaboamassa.model.entity.Pedido;
+import com.itb.inf3bn.pizzariaboamassa.model.entity.ItemPedido;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PedidoRepository extends JpaRepository<Pedido, Long> {
+public interface ItemPedidoRepository extends JpaRepository<ItemPedido, Long> {
 
 
 }
