@@ -19,4 +19,10 @@ public class ErrorMessage {
     private HttpStatus title;
     private int status;
 
+    public ErrorMessage(LocalDateTime timestamp, String[] messages, HttpStatus title) {
+        this.timestamp = timestamp;
+        this.messages = messages;
+        this.title = title;
+        this.status = title.value();
+    }
 }
