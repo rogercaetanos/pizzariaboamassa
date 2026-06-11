@@ -11,7 +11,7 @@ GO
 USE pizzaria_boamassadb
 GO
 
-/* Obs: Tabela Usuario, única para todos os tipos de Usuários (ADMIN, CLIENTE e FUNCIONARIO) */
+/* Obs: Tabela Usuario, ï¿½nica para todos os tipos de Usuï¿½rios (ADMIN, CLIENTE e FUNCIONARIO) */
 
 CREATE TABLE Usuario (
 
@@ -89,6 +89,20 @@ CREATE TABLE ItemPedido (
   CONSTRAINT fk_itemPedido_pedido_id FOREIGN KEY(pedido_id) REFERENCES Pedido (id)
 )
 
+-- Security
+
+CREATE TABLE tokens (
+
+id BIGINT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+expired BIT NOT NULL,
+revoked BIT NOT NULL,
+token VARCHAR(255) NULL,
+token_type VARCHAR(255) NULL,
+usuario_id BIGINT NULL,
+CONSTRAINT fk_token_usuario_id FOREIGN KEY(usuario_id) REFERENCES usuario(id)
+
+
+)
 
 
 
