@@ -7,15 +7,12 @@ import lombok.Setter;
 @Setter
 public class ProdutoRequest {
 
-
-    private Long id;
     private String nome;
     private String descricao;
     private double valorVenda;
     private double valorCompra;
     private String tipo;
     private int quantidadeEstoque;
-    private boolean codStatus;
     private Long categoriaId;
 
 }
